@@ -6,9 +6,9 @@ import Delete from "../../Component/Delete/Delete";
 const Viewpage = () =>{
     const [data,setdata] = useState([])
     const [searchQuery, setSearchQuery] = useState('');
-    // const {totaldatapage} = useLoaderData();
-    const [totaldatapage,settotaldatapage] = useState([])
-    const [sortBy, setSortBy] = useState("asc"); 
+    const {totaldatapage} = useLoaderData();
+  
+    const [sortBy, setSortBy] = useState("dbc"); 
     const [currentpage,setcurrentpage] = useState(0)
     const [itemsperpage,setitemperpage] = useState(5)
     const totalpages = Math.ceil(totaldatapage/itemsperpage)
@@ -27,18 +27,6 @@ const Viewpage = () =>{
     //         console.log(error)
     //     })
     // },[])
-
-      useEffect(()=>{
-      const url = "/totalpage"
-        Axios.get(url)
-        .then(res=>{
-            console.log("res",res.data)
-           
-        })
-        .catch(error =>{
-            console.log(error)
-        })
-    },[])
 
 
 
@@ -85,8 +73,8 @@ setcurrentpage(0)
         setSearchQuery(event.target.value);
       };
     
-      const filterdata = data.filter((data) =>
-        data.name.toLowerCase().includes(searchQuery.toLowerCase())
+      const filterdata = data?.filter((data) =>
+        data?.name?.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
 

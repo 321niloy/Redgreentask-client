@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
           path:"alldata",
           element: <Viewpage></Viewpage>,
-          // loader:({params}) => fetch(`http://localhost:5000/totalpage`)
+          loader:({params}) => fetch(`http://localhost:5000/totalpage`)
 
       },
       {
