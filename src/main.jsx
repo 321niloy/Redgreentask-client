@@ -13,6 +13,7 @@ import Updatepage from './Pages/updatepage/Updatepage.jsx';
 import AuthProvider from './context/Authprovider.jsx';
 import Registration from './Pages/Registrationpage/Registration.jsx';
 import Login from './Pages/Loginpage/Login.jsx';
+import Home from './Pages/Home/Home.jsx';
 
 
 const router = createBrowserRouter([
@@ -21,8 +22,14 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children:[
       {
-          path:"/",
+        path:"/",
+        element: <Home></Home>,
+
+    },
+      {
+          path:"alldata",
           element: <Viewpage></Viewpage>,
+          // loader:({params}) => fetch(`http://localhost:5000/totalpage`)
 
       },
       {

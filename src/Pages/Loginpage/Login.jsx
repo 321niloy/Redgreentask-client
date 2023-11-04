@@ -23,7 +23,7 @@ const Login = () =>{
         console.log(loguser)
         setsuccess('Login Successful')
         Swal.fire('Login Successfull')
-        navigate("/");
+        navigate("/alldata");
       })
       .catch(error=>{
         console.log(error)
