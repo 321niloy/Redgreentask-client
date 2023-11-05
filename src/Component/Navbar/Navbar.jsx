@@ -38,7 +38,7 @@ const Navbar = () =>{
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost normal-case text-xl text-sky-600 ">Red Green Technology LTD.</a>
+          <a className="btn btn-ghost normal-case text-xl text-sky-600 text-center ">Red Green Technology LTD.</a>
         </div>
       
       </div>
