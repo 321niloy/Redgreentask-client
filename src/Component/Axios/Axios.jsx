@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const Axios =axios.create({
-    baseURL:"http://localhost:5000"
+    baseURL:"https://redgreen-task-server-bdslx6d4m-321niloy.vercel.app"
 })
 
 export default Axios;

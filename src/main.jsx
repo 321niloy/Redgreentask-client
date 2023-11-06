@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
           path:"alldata",
           element: <Viewpage></Viewpage>,
-          loader:({params}) => fetch(`http://localhost:5000/totalpage`)
+          loader:() => fetch(`https://redgreen-task-server-bdslx6d4m-321niloy.vercel.app/totalpage`)
 
       },
       {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path:`updatedata/:id`,
         element:<Updatepage></Updatepage>,
-        loader:({params}) => fetch(`http://localhost:5000/alldata/${params.id}`)
+        loader:({params}) => fetch(`https://redgreen-task-server-bdslx6d4m-321niloy.vercel.app/alldata/${params.id}`)
       }   ,
       {
         path:`registration`,

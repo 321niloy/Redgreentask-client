@@ -33,7 +33,7 @@ const Login = () =>{
     }
 
     return(
-       <div className="formstyle mt-3 rounded">
+       <div className="formstyle mt-3 rounded ">
          <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           

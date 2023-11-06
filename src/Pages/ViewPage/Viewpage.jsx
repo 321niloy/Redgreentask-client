@@ -9,6 +9,7 @@ const Viewpage = () => {
   const [currentpage, setcurrentpage] = useState(0);
   const [itemsperpage, setitemperpage] = useState(5);
   const { totaldatapage } = useLoaderData();
+  console.log({totaldatapage})
   const totalpages = Math.ceil(totaldatapage / itemsperpage);
   const pageNumbers = [...Array(totalpages).keys()];
   const startIndex = currentpage * itemsperpage;
@@ -16,7 +17,7 @@ const Viewpage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `http://localhost:5000/alldata?sort=${sortBy}&limit=${itemsperpage}&page=${currentpage}`;
+        const url = `https://redgreen-task-server-bdslx6d4m-321niloy.vercel.app/alldata?sort=${sortBy}&limit=${itemsperpage}&page=${currentpage}`;
         const response = await fetch(url);
         if (response.ok) {
           const data = await response.json();
