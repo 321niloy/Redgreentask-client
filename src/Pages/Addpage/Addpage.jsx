@@ -22,7 +22,7 @@ const Addpage = () =>{
 return(
 
      <div className="foradd">
-        <h1 className="text-5xl text-sky-700 my-5 text-center ">Add Details</h1>
+        <h1 className="text-5xl text-sky-700 my-5 text-center ">ADD DETAILS</h1>
         <div className="hero min-h-screen  rounded-xl">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-600 bg-opacity-40">
