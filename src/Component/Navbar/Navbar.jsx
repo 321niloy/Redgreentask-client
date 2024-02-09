@@ -1,47 +1,248 @@
 
+// import { Link, useNavigate } from "react-router-dom";
+// import "./nav.css"
+// import { useContext, useState } from "react";
+// import { Authcontext } from "../../context/Authprovider";
+// const Navbar = () =>{
+//   const {user,logOut} = useContext(Authcontext)
+//   const navigate = useNavigate()
+
+//   const handlelogout = () =>{
+//     logOut()
+//     navigate("/");
+
+//   }
+
+//   const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+//   const handleDropdownToggle = () => {
+//     setDropdownOpen(!isDropdownOpen);
+//   };
+
+//   const handleMenuItemClick = () => {
+//     // Close the dropdown when a menu item is clicked
+//     setDropdownOpen(false);
+//   };
+//     return(
+// <div className="navbar bg-blue-500 p-4">
+//       {/* Navbar Start */}
+//       <div className="navbar-start space-x-4">
+//         <Link to="/" className="text-white hover:text-gray-300">
+//           Home
+//         </Link>
+//         {user && (
+//           <div className="group inline-block relative">
+//             <button
+//               onClick={handleDropdownToggle}
+//               className="text-white hover:text-gray-300 focus:outline-none"
+//             >
+//               Actions
+//             </button>
+//             <ul
+//               className={`${
+//                 isDropdownOpen ? 'block' : 'hidden'
+//               } absolute bg-blue-500 text-white w-40 mt-2 rounded-md shadow-md`}
+//             >
+//               <li>
+//                 <Link
+//                   to="/addpage"
+//                   onClick={handleMenuItemClick}
+//                   className="block px-4 py-2 hover:bg-blue-600"
+//                 >
+//                   Add Data
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   to="/alldata"
+//                   onClick={handleMenuItemClick}
+//                   className="block px-4 py-2 hover:bg-blue-600"
+//                 >
+//                   View all Data
+//                 </Link>
+//               </li>
+//               <li>
+//                 <button
+//                   onClick={() => {
+//                     handleMenuItemClick();
+//                     handlelogout();
+//                   }}
+//                   className="block px-4 py-2 cursor-pointer hover:bg-blue-600"
+//                 >
+//                   Log out
+//                 </button>
+//               </li>
+//             </ul>
+//           </div>
+//         )}
+//       </div>
+
+//       {/* Navbar Center */}
+//       <div className="navbar-center">
+//         <Link to="/" className="text-white text-2xl font-bold">
+//           Your Logo
+//         </Link>
+//       </div>
+
+//       {/* Navbar End */}
+//       <div className="navbar-end space-x-4">
+//         {user ? (
+//           <button
+//             onClick={() => {
+//               handleMenuItemClick();
+//               handlelogout();
+//             }}
+//             className="text-white hover:text-gray-300"
+//           >
+//             Log out
+//           </button>
+//         ) : (
+//           <div>
+//             <Link
+//               to="/log"
+//               onClick={handleMenuItemClick}
+//               className="text-white hover:text-gray-300"
+//             >
+//               Login
+//             </Link>
+//             <Link
+//               to="/registration"
+//               onClick={handleMenuItemClick}
+//               className="text-white hover:text-gray-300"
+//             >
+//               Register
+//             </Link>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+
+
+
+//     )
+// }
+// export default Navbar;
+
+
 import { Link, useNavigate } from "react-router-dom";
-import "./nav.css"
-import { useContext } from "react";
+import "./nav.css";
+import { useContext, useState } from "react";
 import { Authcontext } from "../../context/Authprovider";
-const Navbar = () =>{
-  const {user,logOut} = useContext(Authcontext)
-  const navigate = useNavigate()
 
-  const handlelogout = () =>{
-    logOut()
+const Navbar = () => {
+  const { user, logOut } = useContext(Authcontext);
+  const navigate = useNavigate();
+
+  const handlelogout = () => {
+    logOut();
     navigate("/");
+  };
 
-  }
-    return(
-        <div className="navbar bg-base-100 nvstyle">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn  btn-circle hover:bg-sky-600 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-sky-600 hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-sky-800 text-white rounded-box w-52">
-              <li ><Link to="/" className="hover:text-white hover:bg-sky-950">Homepage</Link></li>
-       {
-        user && <div>
-        <li ><Link to="/addpage" className="hover:text-white hover:bg-sky-950">Add Data</Link></li>
-              <li ><Link to="/alldata" className="hover:text-white hover:bg-sky-950">View all Data</Link></li>
-        </div>
-       }
-              {
-                user? <li><button onClick={() => handlelogout()} to="/addpage" className="hover:text-white hover:bg-sky-950">Log out</button></li>:
-               <div>
-               <li ><Link to="/log" className="hover:text-white hover:bg-sky-950">Login</Link></li>
-              <li ><Link to="/registration" className="hover:text-white hover:bg-sky-950">Registration</Link></li>
-               </div>
-              }
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleMenuItemClick = () => {
+    // Close the dropdown when a menu item is clicked
+    setDropdownOpen(false);
+  };
+
+  return (
+    <div className="navbar bg-blue-500 p-4">
+      {/* Navbar Start */}
+      <div className="navbar-start space-x-4">
+        <Link to="/" className="text-white hover:text-gray-300">
+          Home
+        </Link>
+        {user && (
+          <div className="group inline-block relative">
+            <button
+              onClick={handleDropdownToggle}
+              className="text-white hover:text-gray-300 focus:outline-none"
+            >
+              Actions
+            </button>
+            <ul
+              className={`${
+                isDropdownOpen ? 'block' : 'hidden'
+              } absolute bg-blue-500 text-white w-40 mt-2 rounded-md shadow-md`}
+            >
+              <li>
+                <Link
+                  to="/addpage"
+                  onClick={handleMenuItemClick}
+                  className="block px-4 py-2 hover:bg-blue-600"
+                >
+                  Add Data
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/alldata"
+                  onClick={handleMenuItemClick}
+                  className="block px-4 py-2 hover:bg-blue-600"
+                >
+                  View all Data
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleMenuItemClick();
+                    handlelogout();
+                  }}
+                  className="block px-4 py-2 cursor-pointer hover:bg-blue-600"
+                >
+                  Log out
+                </button>
+              </li>
             </ul>
           </div>
-        </div>
-        <div className="navbar-center">
-          <a className="btn btn-ghost normal-case text-xl text-sky-600 text-center ">Red Green Technology LTD.</a>
-        </div>
-      
+        )}
       </div>
-    )
-}
+
+      {/* Navbar Center */}
+      <div className="navbar-center">
+        <Link to="/" className="text-white text-2xl font-bold">
+          My Task
+        </Link>
+      </div>
+
+      {/* Navbar End */}
+      <div className="navbar-end space-x-4">
+        {user ? (
+          <button
+            onClick={() => {
+              handleMenuItemClick();
+              handlelogout();
+            }}
+            className="text-white hover:text-gray-300"
+          >
+            Log out
+          </button>
+        ) : (
+          <div>
+            <Link
+              to="/log"
+              onClick={handleMenuItemClick}
+              className="text-white hover:text-gray-300"
+            >
+              Login
+            </Link>
+            <Link
+              to="/registration"
+              onClick={handleMenuItemClick}
+              className="text-white hover:text-gray-300 ms-5"
+            >
+              Register
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export default Navbar;

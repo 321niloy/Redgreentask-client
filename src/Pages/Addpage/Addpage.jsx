@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Axios from "../../Component/Axios/Axios";
 import Swal from "sweetalert2";
-
+import "./add.css"
 const Addpage = () =>{
     const {     register,  handleSubmit,  watch,  formState: { errors },reset } = useForm()
 
@@ -20,9 +20,10 @@ const Addpage = () =>{
 
     }
 return(
-    <div>
+
+     <div className="foradd">
         <h1 className="text-5xl text-sky-700 my-5 text-center ">Add Details</h1>
-        <div className="hero min-h-screen bg-white rounded-xl">
+        <div className="hero min-h-screen  rounded-xl">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-sky-600 bg-opacity-40">
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -70,6 +71,10 @@ return(
   </div>
 </div>
     </div>
+
+   
+
 )
 }
 export default Addpage;
+
