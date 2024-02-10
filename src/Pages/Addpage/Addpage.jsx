@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Axios from "../../Component/Axios/Axios";
 import Swal from "sweetalert2";
-import "./add.css"
+
 const Addpage = () =>{
     const {     register,  handleSubmit,  watch,  formState: { errors },reset } = useForm()
 

@@ -14,10 +14,10 @@ const Home = () => {
           Welcome to Our Website
         </h1>
         <p className="text-3xl text-white font-serif font-extrabold mb-6">
-          First, Register and then Login
+          Please Register with Fake Email,Then you can see a Acation Menu
         </p>
         <p className="text-2xl text-white font-serif font-extrabold mb-6">
-          After logging in, users can access Add, Read, Update, and Delete options.
+          After Clicking action menu you can  Add, Read, Update,sorting,pagination and Delete options.
         </p>
   
         <div className="flex justify-center items-center mt-10">
